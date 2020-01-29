@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+
+
+    #navbar {
+        height: 70px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: greenyellow;
+    }
+
+    li {
+        float: left;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+
+         animation: myanimation 0.2s;
+         animation-timing-function: linear;
+    }
+
+    @keyframes myanimation {
+        from{
+            top:-50px;
+        }
+        to{
+            top: 0px;
+        }
+    }*/
+
+</style>
+
+<body onscroll="f()">
+
+    <ul id="navbar">
+        <li>Home</li>
+        <li>Kontakt</li>
+    </ul>
+
+
+<img src="first.jpg">
+<img src="second.jpg" id="secondPicture">
+<img src="third.jpg">
+<img src="fourth.jpg">
+
+<script>
+    function f() {
+        var secondPicture = document.getElementById("secondPicture")
+        console.log(secondPicture.offsetTop);
+        var navbar = document.getElementById("navbar");
+        console.log(window.pageYOffset);
+        if(window.pageYOffset >= secondPicture.offsetTop) {
+            console.log("If Bedingung")
+            navbar.classList.add("sticky")
+        }
+    }
+
+
+</script>
+</body>
+</html>
