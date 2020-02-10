@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BrainTraining</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+        #container{
+            border: 5px solid black;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            margin-left: 570px;
+            margin-top: 300px;
+
+        }
+
+        .start{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 600px;
+            top: 0px;
+            animation-name: sliding;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration:1s;
+            -webkit-animation-duration: 1s;
+        }
+
+        @keyframes sliding {
+            from{
+                margin-top:-100px;
+            }
+
+            to{
+                margin-top: 400px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<h3>Highscore</h3>
+<p id="highscore">0</p>
+<h3>Currentscore</h3>
+<p id="score">0</p>
+<div class="element">
+
+</div>
+<div id="container">
+
+</div>
+<button onclick="stopGame()"></button>
+
+<script>
+    var colors =["red", "blue", "green", "black","yellow","orange","brown","coral","darkmagenta","gold"]
+    var index = 0;
+    var keyIndex = 0;
+    var containerColor = $("#container").css("background-color")
+    var currentScore = 0;
+
+    var highScore = 0;
+
+    var elements = $(".element")
+    var elementColor = elements.css("background-color")
+    localStorage.setItem("Currentscore",currentScore)
+
+    $(document).ready(function(){
+        console.log("#####" + highScore)
+        settingInterval()
+        startGame();
+
+    });
+
+    function settingInterval(){
+        setInterval(changeColor,1000);
+
+    }
+
+    function changeColor(){
+        index = Math.floor(Math.random() * 10);
+        if(elements.css("margin-top","327") &&  $("#container").css("background-color") == elements.css("background-color")){
+
+            console.log("If Anweisung:" + keyIndex)
+            console.log("If Anweisung:" + index)
+            currentScore++;
+            $("#score").text(currentScore)
+
+        }
+
+        if(index >= colors.length - 1){
+            index = 0;
+            elements.css("background-color",colors[index])
+            console.log("Elementcolor" + elementColor)
+        } else {
+            index++;
+            elements.css("background-color",colors[index])
+            console.log("Elementcolor" + elements.css("background-color"))
+        }
+        localStorage.setItem("Currentscore",currentScore)
+
+    }
+
+    window.addEventListener("keypress",function () {
+        console.log("Key pressed")
+        keyIndex = Math.floor(Math.random() * 10);
+        if(keyIndex >= colors.length -1 ){
+            keyIndex = 0;
+            $("#container").css("background-color",colors[keyIndex])
+            console.log("containercolor:" + containerColor)
+        } else {
+            keyIndex++;
+            $("#container").css("background-color",colors[keyIndex])
+            console.log("containercolor:" + containerColor)
+        }
+
+    })
+
+    function startGame() {
+        var element = $(".element")
+        element.addClass("start")
+    }
+
+    function stopGame() {
+        var element = $(".element")
+        element.removeClass("start")
+    }
+
+</script>
+</body>
+</html>
