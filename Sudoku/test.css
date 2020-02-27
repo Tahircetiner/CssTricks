@@ -1,0 +1,21 @@
+table {
+    margin:1em auto;
+}
+th {
+    height:50px;
+    width:50px;
+    border:1px solid black;
+    text-align:center;
+}
+th:first-child {
+    border-left:solid;
+}
+th:nth-child(3n) {
+    border-right:solid ;
+}
+tr:first-child {
+    border-top:solid;
+}
+tr:nth-child(3n) td {
+    border-bottom:solid ;
+}
