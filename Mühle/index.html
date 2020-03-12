@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -9,20 +9,23 @@
 <body>
 
 <div id="board">
-    <img id="img" draggable="false" src="Bilder/Brett-1e.gif" alt=""/>
+    <img id="brett" src="Bilder/Brett-1e.gif" usemap="#boardmap">
+    <map name="boardmap">
+        <area class="area" shape="circle" coords="108,103,100">
+        <area class="area" shape="circle" coords="259,100,100">
+    </map>
 </div>
 
-
 <div id="weißeSteine">
-    <img id="drag" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
 </div>
 
 
@@ -38,7 +41,7 @@
     <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
 </div>
 
-<div style="width: 200px; border: 1px solid black; height: 200px"></div>
+
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
