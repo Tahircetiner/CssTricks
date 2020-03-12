@@ -1,42 +1,57 @@
 var firstStones = document.getElementsByClassName("firstStone");
-var areaOne = document.getElementsByClassName("area");
-var itemIndex = 0;
+var itemOfFirstStone = 0;
+var secondStones = document.getElementsByClassName("secondStones")
+var itemOfSecondStone = 0;
+var whiteIsDrawing = true;
 
-window.onclick = function (clickEvent) {
-    console.log("Geklicktes Element auf der x-Achse an der Position: " + clickEvent.pageX);
-    console.log("Geklicktes Element auf der y-Achse an der Position: " + clickEvent.pageY);
-
-    console.log(checkValidSetting(clickEvent.pageX,clickEvent.pageY, areaOne.item(i).getAttribute("coords").substring(0,2), areaOne.item(i).getAttribute("coords").substring(3,5)));
-
-    console.log("### " + areaOne.item(0).getAttribute("coords").substring(0,3));
-    console.log("### " + areaOne.item(0).getAttribute("coords").substring(4,7));
-
-
-        for(var i = 0; i < areaOne.length; i++){
-
-        if(checkValidSetting(clickEvent.pageX,clickEvent.pageY, areaOne.item(i).getAttribute("coords").substring(0,3), areaOne.item(i).getAttribute("coords").substring(4,7))){
-            setStone(firstStones.item(itemIndex),areaOne.item(i));
-            itemIndex++;
-        }
-    }
-
-    //setStone(firstStones.item(itemIndex),areaOne.item(itemIndex));
-    console.log("Wird hochgezaehlt?" + itemIndex);
-
-};
-
-function setStone(stone,area) {
-
-    stone.style.position = "absolute";
-    stone.style.left = area.getAttribute("coords").substring(0,3) + "px";
-    stone.style.top = area.getAttribute("coords").substring(4,7) + "px";
+window.onclick = function (ev) {
+    console.log("pixel x-achse : " + ev.pageX);
+    console.log("pixel y-achse : " + ev.pageY);
 }
 
-function checkValidSetting(pixelOfClickedElementX,pixelOfClickedElementY,pixelOfFieldX,pixelOfFieldY) {
-    var isValid = false;
-    if(pixelOfClickedElementX <= pixelOfFieldX && pixelOfClickedElementY <= pixelOfFieldY){
-        return true
-    }
+function setStone(area) {
+    console.log("###########"+whiteIsDrawing)
+    var splitIntoArray =  area.getAttribute("coords").split(",");
 
-    return isValid;
+    console.log("Existiert es nicht?:"  +!checkIfStoneIsSet(area));
+    if(!checkIfStoneIsSet(area)){
+
+        if(whiteIsDrawing && itemOfFirstStone < 9){
+            area.setAttribute("data-index",0)
+
+            firstStones.item(itemOfFirstStone).style.position = "absolute";
+            firstStones.item(itemOfFirstStone).style.left =splitIntoArray[0] + "px";
+            firstStones.item(itemOfFirstStone).style.top = splitIntoArray[1] + "px";
+            itemOfFirstStone++;
+
+
+            whiteIsDrawing = false;
+
+        }
+        else if(!whiteIsDrawing && itemOfSecondStone < 9){
+            area.setAttribute("data-index",1)
+            secondStones.item(itemOfSecondStone).style.position = "absolute";
+
+            secondStones.item(itemOfSecondStone).style.left = splitIntoArray[0] + "px";
+            secondStones.item(itemOfSecondStone).style.top = splitIntoArray[1] +"px";
+
+            itemOfSecondStone++;
+
+            whiteIsDrawing = true;
+        }
+    }
+}
+
+function checkIfStoneIsSet(area) {
+    var alreadyExists = false;
+
+    if(area.getAttribute("data-index") == 0 || area.getAttribute("data-index") == 1){
+        console.log("existiert bereits")
+        alreadyExists = true;
+    }
+    return alreadyExists;
+}
+
+function checkPoints() {
+
 }

@@ -11,34 +11,77 @@
 <div id="board">
     <img id="brett" src="Bilder/Brett-1e.gif" usemap="#boardmap">
     <map name="boardmap">
-        <area class="area" shape="circle" coords="108,103,100">
-        <area class="area" shape="circle" coords="259,100,100">
+        <!-- erste Dimension -->
+        <div id="ersteZeileUndSpalte">
+        <area class="area" shape="circle" coords="43,43,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="243,43,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="443,43,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="43,243,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="43,443,50" onclick="setStone(this)">
+        </div>
+
+        <area class="area" shape="circle" coords="243,443,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="443,443,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="443,43,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="443,243,50" onclick="setStone(this)">
+
+        <!--zweite Dimension-->
+
+        <area class="area" shape="circle" coords="116,110,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="243,110,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="363,110,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="116,243,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="116,380,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="243,380,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="363,380,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="363,110,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="363,243,50" onclick="setStone(this)">
+
+        <!--dritte Dimension-->
+
+        <area class="area" shape="circle" coords="182,180,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="240,180,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="300,180,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="182,243,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="182,300,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="240,300,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="300,300,50" onclick="setStone(this)">
+
+        <area class="area" shape="circle" coords="300,182,50" onclick="setStone(this)">
+        <area class="area" shape="circle" coords="300,240,50" onclick="setStone(this)">
     </map>
 </div>
 
 <div id="weißeSteine">
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
-    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" draggable="true" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
+    <img class="firstStone" src="Bilder/SteinersteFarbe.gif" alt=""/>
 </div>
 
 
 <div id="schwarzeSteine">
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
-    <img src="Bilder/SteinzweiteFarbe.gif" draggable="true" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
+    <img class="secondStones" src="Bilder/SteinzweiteFarbe.gif" alt=""/>
 </div>
 
 
